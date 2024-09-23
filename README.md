@@ -1,4 +1,4 @@
-# ☁️ DESAFIO DE PROJETO: CONFIGURANDO UMA INSTÂNCIA DE BANCO DE DADOS NO AZURE  
+# ☁️ CONSTRUINDO ARQUITETURAS NO AZURE  
  
 <p align="center">
   <img src="https://i.postimg.cc/Gmxtwttm/azure-fundamentals.png" width="256">
@@ -7,57 +7,56 @@
 ---  
 ## ⏯️ INTRODUÇÃO  
 
-<p align='justify'>Neste laboratório do bootcamp <i>Azure Essencials</i>, foram abordadas questões referentes a configuração de Máquinas Virtuais e um Banco de Dados SQL no portal <a href='https://portal.azure.com/'><i>Microsoft Azure</i></a>. Através do projeto, foram simuladas possibilidades de configurar recursos e conhecidos os custos que podem ser cobrados pela sua utilização mensal.</p>     
+<p align='justify'>Neste laboratório do bootcamp <i>Azure Essencials</i>, foram abordadas questões referentes a regiões de disponibilidade e criação de grupo de recursos no portal <a href='https://portal.azure.com/'><i>Microsoft Azure</i></a>. Através do projeto, foram exploradas as regiões no Globo da Microsoft e simuladas algumas configurações para criação de grupo de recursos. </p>     
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/bd-sql-azure.png' width=880> 
+  <img src='' width=880> 
 </p>
 
 --- 
 ## 🗒️RESUMO DOS TÓPICOS:  
 
-<p align='justify'>- Ao selecionar um sistema operacional (imagem) para a criação de VM, abaixo aparecerá o tamanho e previsibilidade de valor cobrado pela disponibilidade por mês. </p>     
+<p align='justify'>- Inicialmente, explorou-se o globo com as regiões de disponibilidade do Azure. Por exemplo, no Brasil existem 2 regiões: <i>Brazil South</i> em SP (reservada para todos os consumidores e parceiros) e <i>Brazil Southeast</i> no RJ (reservada para consumdores brasileiros, que requerem cenário baseado em <i>disaster recovery</i>). </p>     
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/so-vm-azure.png' width=880> 
+  <img src='' width=880> 
 </p>
 
-<p align='justify'>- Na modalidade <i>Pay-as-you-go</i>, com a seleção de imagem da máquina, tudo que for criado pelo cliente é responsabilidade dele.</p>    
+<p align='justify'>- Quanto à <i>Data Residency</i>, a região <i>Brazil South</i> repllica os dados automaticamente para os US e a região <i>Brazil Southeast</i> replica os dados para dentro do território nacional.</p>    
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/redes-vm.png' width=880>  
+  <img src='' width=880>  
 </p>
 
-<p align='justify'>- Para a criação da VM, podem ser adicionados mais discos além dos que já vêm por padrão; na parte de redes, são configuradas redes virtuais e endereçamento de redes, se a máquina estará exposta à internet; é definida a proteção das redes; habilita-se a conexão com ou sem desligamento automático. </p>    
+<p align='justify'>- Na visualização do globo, é demonstrado o cabeamento que conecta as regiões, satélites, e ainda é possível fazer um tour virtual por um datacenter da Microsoft.</p>    
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/adicionar-discos-vm.png' width=880> 
+  <img src='' width=880> 
 </p>
 
-<p align='justify'>- Criar uma máquina virtual não é algo muito simples, exceto se forem utilizadas as configurações de fábrica, sem nenhuma personalização pelo cliente.</p>  
+<p align='justify'>- Para criar um grupo de recursos, é preciso selecionar alguma região que está disponível. Atribuir uma tag para cada grupo de recursos para facilitar a leitura da fatura.</p>    
+
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/desligamento-rd-vm.png' width=880>  
+  <img src='' width=880>  
 </p>  
 
-<p align='justify'>- Para criação de um banco de dados SQL, é preciso indicar a Assinatura, Grupo de recursos, Nome do banco de dados, selecionar a criação de um Servidor. </p>     
+<p align='justify'>- Na área IAM (Controle de acesso) pode-se dar permissionamento para alguém ou remover. Cada usuário receberá permissão para trabalhar com o grupo de recursos do projeto em que estiver envolvido. O permissionamento é responsabilidade do cliente, sendo recomendável que se conceda o menos permissionamento possível para cada pessoa, para evitar ações indevidas. </p>     
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/bd-criacao-bd-azure.png'> 
+  <img src=''> 
 </p>
 
-<p align='justify'>- A plataforma disponibiliza opções de Redundância para o bd, na qual entra o SLA, a partir da escolha feita, exibe os valores que serão cobrados mensalmente.</p>    
+<p align='justify'>- Há diversas funcionalidades, como: visualizador de recursos para mostrar uma árvore com ícones de todos os recursos que já foram criados; parte de Eventos são visualizadas as automatizações; gerenciamentos de custos, dentre outras.</p>    
 
 <p align="center">
-  <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/bd-redundancia.png'> 
+  <img src=''> 
 </p>
 
-<p align='justify'>- É importante lembrar que o cenário de gerenciamento está associado ao modelo de serviço, assim, quanto mais o cliente se envolve, menos a Microsoft está e vice-versa.</p>    
+<p align='justify'>- É permitido colocar itens de outros locais no grupo de recursos. Por exemplo, uma rede virtual criada na região <i>Brazil South</i> pode ser incluída no grupo de recursos da região <i>East US 2</i>. </p>    
 
 <p align="center">
- <img src='https://github.com/rosacarla/lab3-criando-instancia-de-BD-no-Azure/blob/main/images/bd-custos.png' width=880>  
+ <img src='' width=880>  
 </p>
-
-<p align='justify'>- <i>IaaS</i> é um modelo que demanda mais do cliente para fazer ajustes, manutenções, configurações. O modelo menos trabalhoso é o <i>SaaS</i>.</p>  
 
 ---  
 ## ✍️ AUTORA    
@@ -75,8 +74,9 @@ Contato: rosa.carla@pucpr.edu.br
 
 ## 🔗 LINKS ÚTEIS  
 
-- [<i>Azure: Pay-as-you-go</i>](https://azure.microsoft.com/en-au/pricing/offers/ms-azr-0003p)
-- [<i>Azure SQL Database pricing</i>](https://azure.microsoft.com/en-au/pricing/details/azure-sql-database/single/)
+- [Rede global do Azure](https://azure.microsoft.com/pt-br/explore/global-infrastructure/global-network/?msockid=0918e6742c7f677b085cf2a02d0666cb)
+- [Controlar e organizar os recursos do Azure com o <i>Azure Resource Manager</i>](https://learn.microsoft.com/pt-br/training/modules/control-and-organize-with-azure-resource-manager/?WT.mc_id=azureportalcard_Service_ResourceGrps_-inproduct-azureportal)
+- [O que é o <i>Azure Resource Manager</i>?](https://learn.microsoft.com/pt-br/azure/azure-resource-manager/management/overview?WT.mc_id=APC-Resourcegroups)
+- [Documentação do <i>Azure Resource Manager</i>](https://learn.microsoft.com/pt-br/azure/azure-resource-manager/?WT.mc_id=APC-Resourcegroups)
 
 ---  
-
